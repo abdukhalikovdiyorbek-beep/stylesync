@@ -1,0 +1,40 @@
+/* Google Fonts must be imported before Tailwind's layers */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Design tokens (mirror of the JS `C` object in App.jsx) */
+:root {
+  --terracotta: 18 52% 58%;
+  --terracotta-deep: 18 52% 48%;
+  --sage: 150 20% 55%;
+  --sage-soft: 150 22% 92%;
+  --bg: 30 20% 97%;
+  --card: 30 30% 99%;
+  --ink: 20 14% 16%;
+  --muted: 20 8% 46%;
+  --line: 28 18% 88%;
+  --terra-soft: 18 52% 95%;
+  --radius: 1rem;
+}
+
+html, body, #root { height: 100%; }
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background: hsl(var(--bg));
+  color: hsl(var(--ink));
+}
+
+/* Sheet / wizard entrance animation referenced as `animation: ssin ...` */
+@keyframes ssin {
+  from { transform: translateY(12px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+/* Hide scrollbars on the horizontal filter rows */
+::-webkit-scrollbar { height: 0; width: 0; }
